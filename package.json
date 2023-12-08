@@ -1,0 +1,26 @@
+{
+  "name": "mmorpg-client",
+  "version": "1.0.0",
+  "description": "babylonjs-powered",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "marsgpl",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.2",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^6.32.0",
+    "@babylonjs/loaders": "^6.33.0",
+    "@babylonjs/materials": "^6.33.0",
+    "@babylonjs/procedural-textures": "^6.33.0"
+  }
+}
