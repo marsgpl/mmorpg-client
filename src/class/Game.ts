@@ -2,20 +2,18 @@ import {
     Engine,
     Scene,
 } from '@babylonjs/core'
-import { city } from './scenes/city'
+import { city } from '../scene/city'
 
 export class Game {
-    private canvas: HTMLCanvasElement
     public engine: Engine
-    private scene?: Scene
+    protected scene?: Scene
 
-    constructor(canvas: HTMLCanvasElement) {
-        this.canvas = canvas
+    constructor(protected canvas: HTMLCanvasElement) {
         this.engine = this.initEngine()
         this.switchScene(city(this))
     }
 
-    private initEngine() {
+    protected initEngine() {
         const antialias = true
 
         const engine = new Engine(this.canvas, antialias, {
@@ -30,7 +28,7 @@ export class Game {
         return engine
     }
 
-    private async switchScene(scenePromise: Promise<Scene>) {
+    protected async switchScene(scenePromise: Promise<Scene>) {
         this.engine.displayLoadingUI()
 
         this.unloadScene()
@@ -40,7 +38,7 @@ export class Game {
         this.engine.hideLoadingUI()
     }
 
-    private unloadScene() {
+    protected unloadScene() {
         const { scene } = this
 
         if (!scene) {
